@@ -8,8 +8,8 @@ function onPageLoad()
     reloadButton.addEventListener("click", clearForm);
 
     var exerciceBody = document.getElementById("exercice-wrapper");
-    firstPart = [ 'Uzupełnij brakujące słowo w zdaniu', "J'", "Je n'ai pas d'", "J'", 'Je', 'Je suis', 'Je ne parle pas', 'Je ne suis pas', 'Je suis', 'Je ne suis'];
-    secondPart = [ 'Polskie znaczenie jest podane w nawiasie', '29 ans.', '.', 'à Bielsko-Biała.', 'polonais et anglais.', '.', '.', '.', '.', 'français.' ];
+    firstPart = [ 'Uzupełnij', "J'", "Je n'ai pas d'", "J'", 'Je', 'Je suis', 'Je ne parle pas', 'Je ne suis pas', 'Je suis', 'Je ne suis'];
+    secondPart = [ 'Podpowiedź w nawiasie', '29 ans.', '.', 'à Bielsko-Biała.', 'polonais et anglais.', '.', '.', '.', '.', 'français.' ];
     missingElement = [ 'Se présenter', 'ai', 'enfants', 'habite', 'parle', 'étudiant', 'allemand', 'marié', 'célibataire', 'pas' ];
     hints = [ "", 'Mam 29 lat.', 'Nie mam dzieci.', 'Mieszkam w Bielsku-Białej.', 'Mówię po polsku i po angielsku.', 'Jestem studentem.', 'Nie mówię po niemiecku.', 'Nie jestem żonaty.', 'Jestem singlem / kawalerem.', 'Nie jestem Francuzem.'];
 

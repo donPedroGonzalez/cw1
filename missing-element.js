@@ -118,6 +118,7 @@ function onPageLoad()
 
     document.getElementById("button").onclick = function()
     {
+        correctNumber = 0;
         for(var i = 1; i < firstPart.length; i++)
         {
             keyboardDeactivation();

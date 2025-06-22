@@ -53,9 +53,6 @@
 	 font-size: xx-large;
 	 text-shadow: 0px 0px 5px #497884;
 }
-#o-mnie-footer {
-	 justify-content: center;
-}
  #navigation {
 	 display: grid;
 }
@@ -128,7 +125,7 @@
  @media screen and (max-width: 1200px) {
 	 .wrapper {
 		 grid-template-columns: 1.5fr 6.5fr 2fr;
-		 grid-template-rows: 12vh 14vh 64vh 5vh;
+		 grid-template-rows: 10vh 14vh 66vh 5vh;
 	}
 	 #title {
 		 font-size: x-large;
@@ -148,17 +145,7 @@
 		 width: 100px;
 	}
 }
-
-@media screen and (max-width: 900px) {
-	#o-mnie-footer {
-		font-size: small;
-	}
-	#footer-cat-info {
-		font-size: small;
-	}
-}
-
-@media screen and (max-width: 768px) {
+ @media screen and (max-width: 768px) {
 	 .wrapper {
 		 grid-template-columns: 1fr;
 		 grid-template-rows: auto auto auto 1fr auto;

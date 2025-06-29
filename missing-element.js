@@ -8,10 +8,10 @@ function onPageLoad()
     reloadButton.addEventListener("click", clearForm);
 
     var exerciceBody = document.getElementById("exercice-wrapper");
-    firstPart = [ 'Uzupełnij', "J'", "Je n'ai pas d'", "J'", 'Je', 'Je suis', 'Je ne parle pas', 'Je ne suis pas', 'Je suis', 'Je ne suis'];
-    secondPart = [ 'Podpowiedź w nawiasie', '29 ans.', '.', 'à Bielsko-Biała.', 'polonais et anglais.', '.', '.', '.', '.', 'français.' ];
-    missingElement = [ 'Se présenter', 'ai', 'enfants', 'habite', 'parle', 'étudiant', 'allemand', 'marié', 'célibataire', 'pas' ];
-    hints = [ "", 'Mam 29 lat.', 'Nie mam dzieci.', 'Mieszkam w Bielsku-Białej.', 'Mówię po polsku i po angielsku.', 'Jestem studentem.', 'Nie mówię po niemiecku.', 'Nie jestem żonaty.', 'Jestem singlem / kawalerem.', 'Nie jestem Francuzem.'];
+    firstPart = [ "Uzupełnij brakujące słowo w zdaniu", "J'", "J'ai", "J'", "Je", "J'ai", "Je", "Je", "Ma", "Mes" ];
+    secondPart = [ "Polskie znaczenie jest podane w nawiasie", "53 ans.", ".", "en Basse-Silésie.", "médecin.", ".", "polonais et anglais.", "célibataire.", "est médecin.", "s'appellent Mruczek et Puszek." ];
+    missingElement = [ "Se présenter", "ai", "deux enfants", "habite", "suis", "deux chats", "parle", "ne suis pas", "profession", "chats" ];
+    hints = [ "nan", "Mam 53 lata.", "Mam dwoje dzieci.", "Mieszkam na Dolnym Śląsku.", "Jestem lekarzem.", "Mam dwa koty.", "Mówię po polsku i po angielsku.", "Nie jestem singlem / kawalerem.", "Mój zawód to lekarz.", "Moje koty nazywają się Mruczek i Puszek." ];
 
     var myForm = document.createElement("form");
     myForm.setAttribute("id", "myExercice"); 
@@ -28,16 +28,21 @@ function onPageLoad()
         newItemLabel1.innerText = firstPart[i] + " ";
         newItemLabel2 = document.createElement("label");
         newItemLabel2.setAttribute("for", "item"+i);        
-        newItemLabel2.innerText = " " + secondPart[i] + " (" + hints[i] + ")";          
+        //newItemLabel2.innerText = " " + secondPart[i] + " (" + hints[i] + ")";          
+        newItemLabel2.innerText = "  " + secondPart[i] + "  ";
+        newHintSubItem = document.createElement("span")
+        newHintSubItem.innerText =  "(" + hints[i] + ")";
+        newHintSubItem.setAttribute("style", "font-style: italic; font-size:12pt;")
         newItemInput = document.createElement("input");
         newItemInput.setAttribute("type", "text");        
         newItemInput.setAttribute("name", "item"+i);
         newItemInput.setAttribute("id", "item"+i);
-        newItemInput.setAttribute("style", "min-width: 350px; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size:16pt;");
+        newItemInput.setAttribute("style", "min-width: 300px; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size:16pt;");
         var paragraph = document.createElement("p");
         paragraph.appendChild(newItemLabel1);
         paragraph.appendChild(newItemInput);
         paragraph.appendChild(newItemLabel2);
+        paragraph.appendChild(newHintSubItem);
         paragraph.setAttribute("id", "par" + i);
         myForm.appendChild(paragraph);
     }
@@ -127,7 +132,7 @@ function onPageLoad()
             formToCheck = document.getElementById("myExercice");
             itemToCheck = formToCheck.elements[itemName].value;
             // removing old result content if present in case of second, third etc. check button click.
-            var spans = document.getElementById("par"+i).getElementsByTagName("span");
+            var spans = document.getElementById("par"+i).getElementsByClassName("check-answer");
             for (var m = 0; m < spans.length; m++)
             {
                 spans[m].parentNode.removeChild(spans[m]);            
@@ -137,6 +142,7 @@ function onPageLoad()
                 myparagraph = document.createElement("span");
                 myparagraph.setAttribute("id", "answer"+i);
                 myparagraph.setAttribute("style", "color:red;");
+                myparagraph.setAttribute("class", "check-answer");
                 myparagraph.innerText = " - La réponse correcte : " + missingElement[i];
                 
                 document.getElementById("par"+i).appendChild(myparagraph);
@@ -145,6 +151,7 @@ function onPageLoad()
                 myparagraph = document.createElement("span");
                 myparagraph.setAttribute("id", "answer"+i);
                 myparagraph.setAttribute("style", "color:green;");
+                myparagraph.setAttribute("class", "check-answer");
                 myparagraph.innerText = " - C'est correct, félicitations !";
                 document.getElementById("par"+i).appendChild(myparagraph);
                 correctNumber++;
@@ -163,7 +170,7 @@ function onPageLoad()
             formToClear = document.getElementById("myExercice");
             formToClear.reset();
             // removing old result content if present in case of second, third etc. check button click.
-            var spans = document.getElementById("par"+i).getElementsByTagName("span");
+            var spans = document.getElementById("par"+i).getElementsByClassName("check-answer");
             for (var m = 0; m < spans.length; m++)
             {
                 spans[m].parentNode.removeChild(spans[m]);            

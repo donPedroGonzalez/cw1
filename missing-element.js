@@ -8,10 +8,10 @@ function onPageLoad()
     reloadButton.addEventListener("click", clearForm);
 
     var exerciceBody = document.getElementById("exercice-wrapper");
-    firstPart = [ "Uzupełnij brakujące słowo w zdaniu", "J'", "J'ai", "J'", "Je", "J'ai", "Je", "Je", "Ma", "Mes" ];
-    secondPart = [ "Polskie znaczenie jest podane w nawiasie", "53 ans.", ".", "en Basse-Silésie.", "médecin.", ".", "polonais et anglais.", "célibataire.", "est médecin.", "s'appellent Mruczek et Puszek." ];
-    missingElement = [ "Se présenter", "ai", "deux enfants", "habite", "suis", "deux chats", "parle", "ne suis pas", "profession", "chats" ];
-    hints = [ "nan", "Mam 53 lata.", "Mam dwoje dzieci.", "Mieszkam na Dolnym Śląsku.", "Jestem lekarzem.", "Mam dwa koty.", "Mówię po polsku i po angielsku.", "Nie jestem singlem / kawalerem.", "Mój zawód to lekarz.", "Moje koty nazywają się Mruczek i Puszek." ];
+    firstPart = [ "Uzupełnij brakujące słowo w zdaniu", "Je m'", "J'ai", "J'", "Je", "Je", "J'", "Je", "J'aime les" ];
+    secondPart = [ "Polskie znaczenie jest podane w nawiasie", "Małgorzata.", ".", "à Włocławek.", "professeur d'allemand.", "polonais et allemand.", "voyager.", "chanter.", "." ];
+    missingElement = [ "Se présenter", "appelle", "un enfant", "habite", "suis", "parle", "aime", "n'aime pas", "fleurs" ];
+    hints = [ "nan", "Nazywam się Małgorzata.", "Mam jedno dziecko.", "Mieszkam we Włocławku.", "Jestem nauczycielką niemieckiego.", "Mówię po polsku i po niemiecku.", "Lubię podróżować.", "Nie lubię śpiewać.", "Lubię kwiaty." ];
 
     var myForm = document.createElement("form");
     myForm.setAttribute("id", "myExercice"); 

@@ -8,10 +8,10 @@ function onPageLoad()
     reloadButton.addEventListener("click", clearForm);
 
     var exerciceBody = document.getElementById("exercice-wrapper");
-    firstPart = [ "Uzupełnij brakujące słowo w zdaniu", "Je m'", "J'ai", "J'", "Je", "Je", "J'", "Je", "J'aime les" ];
-    secondPart = [ "Polskie znaczenie jest podane w nawiasie", "Małgorzata.", ".", "à Włocławek.", "professeur d'allemand.", "polonais et allemand.", "voyager.", "chanter.", "." ];
-    missingElement = [ "Se présenter", "appelle", "un enfant", "habite", "suis", "parle", "aime", "n'aime pas", "fleurs" ];
-    hints = [ "nan", "Nazywam się Małgorzata.", "Mam jedno dziecko.", "Mieszkam we Włocławku.", "Jestem nauczycielką niemieckiego.", "Mówię po polsku i po niemiecku.", "Lubię podróżować.", "Nie lubię śpiewać.", "Lubię kwiaty." ];
+    firstPart = [ "Uzupełnij brakujące słowo w zdaniu", "Je m'", "Je", "J'", "Je", "Je", "J'", "Je", "J'aime les" ];
+    secondPart = [ "Polskie znaczenie jest podane w nawiasie", "Konrad.", "célibataire.", "à Cracovie.", "étudiant.", "polonais et anglais.", "l'art.", "le bruit.", "." ];
+    missingElement = [ "Se présenter", "appelle", "suis", "habite", "suis", "parle", "aime", "n'aime pas", "animaux" ];
+    hints = [ "nan", "Nazywam się Konrad.", "Jestem kawalerem.", "Mieszkam w Krakowie.", "Jestem studentem.", "Mówię po polsku i po angielsku.", "Lubię sztukę.", "Nie lubię hałasu.", "Lubię zwierzęta." ];
 
     var myForm = document.createElement("form");
     myForm.setAttribute("id", "myExercice"); 
